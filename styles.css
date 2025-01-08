@@ -1,0 +1,56 @@
+
+        header,
+        footer {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        main {
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .save-btn {
+            background-color: blue;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th,
+        table td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .error {
+            border: solid red;
+        }

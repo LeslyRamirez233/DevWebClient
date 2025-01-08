@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Citas - MedacDent</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="MedacDent">
+        <h1>Gestión de Citas</h1>
+    </header>
+
+    <main>
+        <form id="appointment-form">
+            <h2>Registrar Cita</h2>
+            <div>
+                <label for="date">Fecha y Hora</label>
+                <input type="datetime-local" id="date" name="date">
+            </div>
+            <div>
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" name="dni">
+            </div>
+            <div>
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="lastname">Apellidos</label>
+                <input type="text" id="lastname" name="lastname">
+            </div>
+            <div>
+                <label for="phone">Teléfono</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div>
+                <label for="birthdate">Fecha de Nacimiento</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </div>
+            <div>
+                <label for="notes">Observaciones</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+            <input type="submit" class="save-btn" value="Guardar Cita">
+        </form>
+
+        <table id="appointments-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fecha y Hora</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Observaciones</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="no-data">
+                    <td colspan="9" style="text-align: center;">Dato vacío</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>Contacto MedacDent:
+            Calle de Brasil, 18, 28946, Fuenlabrada, Madrid</p>
+        <p> 890-458-236
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
