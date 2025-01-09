@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('#appointments-table tbody');
     const noDataRow = document.getElementById('no-data');
 
-    // Función para actualizar la tabla
+    // Actualizar tabla
     const updateTable = (appointments) => {
         if (appointments.length > 0) {
             tableBody.innerHTML = '';
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Cargar citas desde el almacenamiento local
+    // Cargar citas 
     const loadAppointments = () => {
         const appointments = JSON.parse(localStorage.getItem('appointments')) || [];
         updateTable(appointments);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let isValid = true;
 
         inputs.forEach(input => {
-            if (!input.value == "") {
+            if ((input.id == 'phone' && isNaN(input.value)) || input.value == "") {
                 input.classList.add('error');
                 isValid = false;
             } else {
@@ -49,18 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const phoneInput = document.getElementById('phone');
-        if (isNaN(phoneInput.value)) {
-            phoneInput.classList.add('error');
-            isValid = false;
-        } else {
-            phoneInput.classList.remove('error');
-        }
-
         return isValid;
     };
 
-    // Manejar envío del formulario
+    // Envio de formulario
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -82,10 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
             updateTable(appointments);
 
             form.reset();
+        }else {
+            alert("Por favor, revise los datos introducidos");
         }
     });
 
-    // Manejar eliminación de citas
+    // Eliminar cita
     tableBody.addEventListener('click', (e) => {
         if (e.target.classList.contains('delete-btn')) {
             const id = e.target.dataset.id;
@@ -96,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Manejar edición de citas
+    // Editar cita
     tableBody.addEventListener('click', (e) => {
         if (e.target.classList.contains('edit-btn')) {
             const id = e.target.dataset.id;
